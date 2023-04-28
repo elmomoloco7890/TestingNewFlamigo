@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flamingo_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.artemis.prime.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_adapterFragment"
+            app:destination="@id/adapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adapterFragment"
+        android:name="com.artemis.prime.ui.fragments.AdapterFragment"
+        android:label="Adapter"
+        tools:layout="@layout/fragment_adapter">
+        <action
+            android:id="@+id/action_adapterFragment_to_adapterDetails"
+            app:destination="@id/adapterDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/adapterDetails"
+        android:name="com.artemis.prime.ui.fragments.AdapterDetails"
+        android:label="Details"
+        tools:layout="@layout/fragment_adapter_details" >
+        <action
+            android:id="@+id/action_adapterDetails_to_adapterFragment"
+            app:destination="@id/adapterFragment" />
+        <action
+            android:id="@+id/action_adapterDetails_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

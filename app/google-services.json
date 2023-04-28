@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359843750342",
+    "project_id": "testingnewflamingo",
+    "storage_bucket": "testingnewflamingo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359843750342:android:c3ce626e978b079fc452c7",
+        "android_client_info": {
+          "package_name": "com.artemis.prime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359843750342-kldj6f5btsgj3m20lcmvkg2p7kl63dl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHmuWe-Epwr9smt6NHanxrClNkHVOWHzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359843750342-kldj6f5btsgj3m20lcmvkg2p7kl63dl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
