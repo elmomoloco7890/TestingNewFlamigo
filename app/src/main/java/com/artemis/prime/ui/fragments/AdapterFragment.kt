@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.artemis.prime.R
 import com.artemis.prime.adapter.FlamingoHolidayAdapter
 import com.artemis.prime.data.FlamingoHolidaysItem
@@ -50,6 +51,8 @@ class AdapterFragment : Fragment(), FlamingoItemClickListener {
     override fun onItemClicked(flamingoHolidaysItem: FlamingoHolidaysItem) {
         for (holly in 1..30){
             if (holly == 1 ){
+                val action = AdapterFragmentDirections.actionAdapterFragmentToAdapterDetails(flamingoHolidaysItem)
+                findNavController().navigate(action)
                 sharedViewModel.getToasty(requireActivity(), "I have been clicked", Toast.LENGTH_SHORT)
                 break
             }
