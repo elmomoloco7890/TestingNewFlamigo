@@ -5,13 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.artemis.prime.R
+import com.artemis.prime.adapter.FlamingoHolidayAdapter
+import com.artemis.prime.data.FlamingoHolidaysItem
 import com.artemis.prime.databinding.FragmentAdapterBinding
+import com.artemis.prime.events.FlamingoItemClickListener
+import com.artemis.prime.model.FlamingoViewModel
 
 
-class AdapterFragment : Fragment() {
+class AdapterFragment : Fragment(), FlamingoItemClickListener {
 
     private var binding: FragmentAdapterBinding ?= null
+
+    private val sharedViewModel: FlamingoViewModel by activityViewModels()
+
+    private lateinit var adapter: FlamingoHolidayAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,9 +37,31 @@ class AdapterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter = FlamingoHolidayAdapter(requireActivity(), this)
         binding?.apply {
             adapterFragment = this@AdapterFragment
+            flamingoAdapter = adapter
         }
+
+        sharedViewModel.allHolidays.observe(viewLifecycleOwner) {
+            adapter.updateHolidayList(it)
+        }
+
+    }
+    override fun onItemClicked(flamingoHolidaysItem: FlamingoHolidaysItem) {
+        for (holly in 1..30){
+            if (holly == 1 ){
+                val action = AdapterFragmentDirections.actionAdapterFragmentToAdapterDetails(flamingoHolidaysItem)
+                findNavController().navigate(action)
+                sharedViewModel.getToasty(requireActivity(), "I have been clicked", Toast.LENGTH_SHORT)
+                break
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
 

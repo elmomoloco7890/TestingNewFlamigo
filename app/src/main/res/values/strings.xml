@@ -2,4 +2,10 @@
     <string name="app_name">TestingNewFlamigo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_label_txt">Name</string>
+    <string name="date_label_txt">Date</string>
+    <string name="holiday_list_txt">Holiday List</string>
+    <string name="image_content_description">Holiday island placeholder for potential list of images.</string>
+    <string name="holiday_details_txt">Holiday Details</string>
+    <string name="go_home_txt">Go Home</string>
 </resources>
