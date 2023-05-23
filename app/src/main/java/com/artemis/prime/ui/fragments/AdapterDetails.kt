@@ -15,8 +15,6 @@ class AdapterDetails : Fragment() {
 
     private var binding: FragmentAdapterDetailsBinding ?= null
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

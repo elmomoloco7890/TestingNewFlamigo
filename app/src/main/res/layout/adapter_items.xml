@@ -19,33 +19,40 @@
         android:layout_height="wrap_content"
         android:onClick="@{()-> flamingoItemsClicked.onItemClicked(flamingoHolidayItems)}"
         app:cardCornerRadius="0dp"
-        app:cardUseCompatPadding="true"
-        android:padding="10dp"
-        >
+        app:cardUseCompatPadding="false"
+        app:cardPreventCornerOverlap="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/white"
+        android:outlineProvider="none"
+        app:strokeWidth="0dp"
+        android:padding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            >
 
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                tools:text="Chinese New Year"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:gravity="center_vertical"
                 android:drawablePadding="10dp"
+                android:gravity="center_vertical"
                 android:paddingHorizontal="10dp"
                 android:text="@{flamingoHolidayItems.name}"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:drawableEndCompat="@drawable/pink_arrow"
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Chinese New Year" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline6"
@@ -53,6 +60,24 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="72dp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/flamingo_bottom_border"
+                app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="79dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
