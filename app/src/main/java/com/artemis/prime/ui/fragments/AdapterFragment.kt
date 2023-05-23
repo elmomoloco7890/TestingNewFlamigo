@@ -53,7 +53,6 @@ class AdapterFragment : Fragment(), FlamingoItemClickListener {
             if (holly == 1 ){
                 val action = AdapterFragmentDirections.actionAdapterFragmentToAdapterDetails(flamingoHolidaysItem)
                 findNavController().navigate(action)
-                sharedViewModel.getToasty(requireActivity(), "I have been clicked", Toast.LENGTH_SHORT)
                 break
             }
         }
